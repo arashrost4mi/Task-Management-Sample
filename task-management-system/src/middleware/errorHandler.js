@@ -11,10 +11,11 @@ class ErrorHandler extends Error {
 const errorHandlerMiddleware = (err, req, res, next) => {
   const { statusCode, messageKey } = err;
   const message = messageKey || INTERNAL_SERVER_ERROR;
+  const errorStatus = statusCode || 500;
 
   res.status(200).json({
     success: false,
-    errorCode: statusCode || 500,
+    errorCode: errorStatus,
     error: message,
   });
 };

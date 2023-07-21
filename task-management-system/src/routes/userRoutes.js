@@ -8,15 +8,16 @@ import {
   updateUser,
   deleteUser
 } from '../controllers/userController.js';
+import authenticateUser from '../middleware/authMiddleware.js';
 
 const router = express.Router();
 
 router.post('/user', createUser);
 router.post('/user/login', loginUser);
-router.get('/users', getAllUsers);
-router.get('/user/:id', getUserById);
-router.get('/user/username/:username', getUserByUsername);
-router.put('/user/:id', updateUser);
-router.delete('/user/:id', deleteUser);
+router.get('/users', authenticateUser, getAllUsers);
+router.get('/user/:id', authenticateUser, getUserById);
+router.get('/user/username/:username', authenticateUser, getUserByUsername);
+router.put('/user/:id', authenticateUser, updateUser);
+router.delete('/user/:id', authenticateUser, deleteUser);
 
 export default router;

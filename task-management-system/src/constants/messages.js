@@ -9,3 +9,5 @@ export const TASK_DOES_NOT_EXIST = 'Task does not exist';
 export const NO_TOKEN_PROVIDED = 'Access denied. No token provided.';
 export const INVALID_TOKEN = 'Access denied. Invalid token.';
 export const INVALID_CREDENTIALS = 'Username or Password is incorrect! Please try again.';
+export const USER_NOT_AUTHORIZED = 'You do not have the permission.';
+export const TOKEN_EXPIRED = 'The token has been expired!';

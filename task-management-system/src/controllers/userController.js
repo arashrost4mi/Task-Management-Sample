@@ -9,7 +9,6 @@ import { ErrorHandler } from '../middleware/errorHandler.js';
 import mongoose from 'mongoose';
 import bcrypt from "bcrypt";
 import UserRepository from "../repository/userRepository.js";
-import User from '../models/userModel.js';
 const userRepository = new UserRepository();
 
 
