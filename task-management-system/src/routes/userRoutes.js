@@ -8,7 +8,7 @@ import {
   updateUser,
   deleteUser
 } from '../controllers/userController.js';
-import authenticateUser from '../middleware/authentication.js';
+import authenticateUser from '../middleware/authMiddleware.js';
 import authorize from '../middleware/authorization.js';
 
 const router = express.Router();

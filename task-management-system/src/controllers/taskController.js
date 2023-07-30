@@ -80,6 +80,9 @@ export const updateTask = async (req, res, next) => {
 export const deleteTask = async (req, res, next) => {
   try {
     const taskId = req.params.id;
+    if (!taskRepository.getById(taskId)) {
+      throw new ErrorHandler(404, TASK_NOT_FOUND);
+    }
     const deletedTask = await taskRepository.delete(taskId);
     if (!deletedTask) {
       throw new ErrorHandler(404, TASK_NOT_FOUND);

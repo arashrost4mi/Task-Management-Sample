@@ -6,7 +6,7 @@ import {
   updateTask,
   deleteTask
 } from '../controllers/taskController.js';
-import authenticateUser from '../middleware/authentication.js';
+import authenticateUser from '../middleware/authMiddleware.js';
 import authorize from '../middleware/authorization.js';
 
 const router = express.Router();
